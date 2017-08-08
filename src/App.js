@@ -54,6 +54,7 @@ class App extends Component {
     this.state = {
       route: window.location.hash.substr(1),
       currentMenu: 'stack',
+      isOpen: false,
       side: 'left'
     };
   }
@@ -106,7 +107,7 @@ class App extends Component {
     return (
       <div id="outer-container" style={{height: '100%'}}>
         <MenuWrap wait={20} side={this.state.side}>
-          <Menu id={this.state.currentMenu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} left>
+          <Menu isOpen={this.state.isOpen} id={this.state.currentMenu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} left>
             {items}
           </Menu>
         </MenuWrap>
