@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "background-cover": "0.0.6",
     "classnames": "^2.2.5",
+    "insert-rule": "^2.1.0",
+    "iphone-inline-video": "^2.2.2",
     "parallax-js": "https://github.com/wagerfield/parallax",
     "react": "^15.6.1",
+    "react-background-video-player": "^0.3.0",
     "react-burger-menu": "^2.1.4",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.10",

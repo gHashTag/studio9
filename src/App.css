@@ -63,10 +63,6 @@ h1 {
   border-bottom-left-radius: 20px 50px;
   cursor: pointer;
 }
-.demo-buttons a.current-demo {
-  background: #c94e50;
-  color: #fffce1;
-}
 .side-button {
   display: inline-block;
   width: 5em;
@@ -88,7 +84,7 @@ h1 {
   border-bottom-right-radius: 10px;
 }
 .side-button.active {
-  background: #121111;
+  background: #fff;
 }
 @media screen and (max-width: 40em) {
   main {
@@ -105,7 +101,7 @@ h1 {
 }
 .bm-burger-button {
   position: fixed;
-  width: 36px;
+  width: 28px;
   height: 30px;
   left: 36px;
   top: 36px;
@@ -115,7 +111,7 @@ h1 {
   right: 36px;
 }
 .bm-burger-bars {
-  background: #121111;
+  background: #BF813E;
 }
 .bm-morph-shape {
   fill: #121111;
