@@ -9,7 +9,6 @@ import TV from './components/tv.js'
 import Restaurant from './components/restaurant.js'
 import Shop from './components/shop.js'
 
-
 class MenuWrap extends Component {
   constructor (props) {
     super(props);
@@ -108,7 +107,7 @@ class App extends Component {
     return (
       <div id="outer-container" style={{height: '100%'}}>
         <MenuWrap wait={20} side={this.state.side}>
-         <Menu customBurgerIcon={ <img src={require('./assets/icon.svg')} alt="studio9" /> } isOpen={this.state.isOpen} id={this.state.currentMenu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} left>
+         <Menu isOpen={this.state.isOpen} id={this.state.currentMenu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} left>
             {items}
           </Menu>
         </MenuWrap>

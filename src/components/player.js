@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TestComponent from  './videobackground.js';
+import Header from './header.js'
 
 document.body.style.position = 'absolute';
 document.body.style.margin = 0;
@@ -90,14 +91,7 @@ export default class Player extends Component {
           autoPlay={true}
           volume={0.5}
         />
-        <nav style={{
-          position: 'absolute',
-          marginLeft: 90,
-          paddingTop: 26,
-          display: 'flex',
-        }}>
-        <img style={{ textAlign: 'center', height: 50 }} src={require('../assets/logo.png')} alt='studio9reborn' />
-        </nav>
+        <Header />
       </div>
     )
   }
