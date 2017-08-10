@@ -16,6 +16,7 @@ class TimeTable extends Component {
 
 const styles = {
  container: {
+   flex: 1,
    padding: 15
  } 
 }

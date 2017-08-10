@@ -10,6 +10,7 @@
 
 .App-intro {
   font-size: large;
+  overflow: auto; 
 }
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,800);

@@ -80,7 +80,7 @@ export default class Player extends Component {
           containerWidth={this.state.windowWidth}
           containerHeight={this.state.windowHeight}
           src={require('../assets/spa.mp4')}
-          poster={'http://i29.ltalk.ru/23/78/277823/52/8163752/11111.png?i10c=img.resize(height:160)'}
+          poster={require('../assets/transparent.png')}
           onPlay={this.handleOnPlay}
           onPause={this.handleOnPause}
           onMute={this.handleOnMute}
