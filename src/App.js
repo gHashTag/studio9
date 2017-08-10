@@ -9,6 +9,7 @@ import TimeTable from './components/timetable.js'
 import TV from './components/tv.js'
 import Restaurant from './components/restaurant.js'
 import Shop from './components/shop.js'
+import Contact from './components/contact.js'
 
 class MenuWrap extends Component {
   constructor (props) {
@@ -84,7 +85,8 @@ class App extends Component {
      <a key="3" href="#/timetable"><i className="fa fa-fw fa-calendar" /><span>Расписание</span></a>,
      <a key="4" href="#/tv"><i className="fa fa-fw fa-film" /><span>TV</span></a>,
      <a key="5" href="#/restaurant"><i className="fa fa-fw fa-leaf" /><span>Ресторан</span></a>,
-     <a key="6" href="#/shop"><i className="fa fa-fw fa-shopping-bag" /><span>Магазин</span></a>
+     <a key="6" href="#/shop"><i className="fa fa-fw fa-shopping-bag" /><span>Магазин</span></a>,
+     <a key="7" href="#/contact"><i className="fa fa-fw fa-globe" /><span>Контакт</span></a>
         ];
     return items;
   }
@@ -102,6 +104,7 @@ class App extends Component {
       case '/tv': Child = TV; break;
       case '/restaurant': Child = Restaurant; break;
       case '/shop': Child = Shop; break;
+      case '/contact': Child = Contact; break;
       default: Child = Home;
     }
 

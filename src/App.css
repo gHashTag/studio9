@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  position: fixed;
+  overflow: scroll; 
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+  -webkit-overflow-scrolling: touch;
 }
 
 .App-header {
@@ -10,7 +16,6 @@
 
 .App-intro {
   font-size: large;
-  overflow: auto; 
 }
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,800);
