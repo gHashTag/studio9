@@ -1,27 +1,20 @@
 import React, { Component } from 'react'
-
-const styles = {
- nav: {
-   position: 'absolute',
-   marginLeft: 70,
-   paddingTop: 29,
-   display: 'flex'
- },
- logo: {
-   textAlign: 'center',
-   height: 45 
- } 
-}
+import '../App.css'
 
 export default class Header extends Component {
   render() {
-    const { nav, logo } = styles
+    const { logo } = styles
     return (
-     <div>
-       <nav style={nav}>
-        <img style={logo} src={require('../assets/logo.png')} alt='studio9reborn' />
-        </nav>
-     </div>
+      <img style={logo} src={require('../assets/logo.png')} alt='studio9reborn' />
     )
   }
+}
+
+const styles = {
+ logo: {
+   textAlign: 'center',
+   marginTop: 11,
+   marginLeft: 25,
+   height: 45 
+ } 
 }

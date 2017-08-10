@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TestComponent from  './videobackground.js';
-import Header from './header.js'
 
 document.body.style.position = 'absolute';
 document.body.style.margin = 0;
@@ -91,7 +90,6 @@ export default class Player extends Component {
           autoPlay={true}
           volume={0.5}
         />
-        <Header />
       </div>
     )
   }

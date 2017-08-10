@@ -1,0 +1,90 @@
+  div.healcode .healcode-title-text {
+    color: rgba(0, 0, 255, 0) !important;
+  }
+  div.healcode .hc_header_time {
+    visibility: hidden !important;
+  }
+  div.healcode, div.healcode table.schedule tr td, div.healcode table.schedule tr td ol.schedule_list li {
+    color: #rgb(74, 73, 74) !important;
+    font-size: 15px;
+    font-family: 'Avenit next'
+  }
+  /*Преподаватель*/
+  div.healcode a {
+    color: #917151 !important;
+    font-size: 15px;
+    font-family: 'Avenir next';
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  /*Filter*/
+  div.healcode label {
+    font-size: 15px;
+    font-family: 'Avenir next';
+    text-transform: uppercase
+  }
+  div.healcode table.schedule tr.odd td, div.healcode div.list_view li.odd, div.healcode table.list_view ol.schedule_list li.odd {
+    background-color: rgba(0, 0, 255, 0) !important;
+    font-size: 15px;
+    font-family: 'Avenir next';
+    text-transform: uppercase;
+  }
+  div.healcode table.schedule tr.even td, div.healcode div.list_view li.even, div.healcode table.list_view ol.schedule_list li.even {
+    background-color: rgba(0, 0, 255, 0) !important;
+    font-size: 15px;
+    font-family: 'Avenir next';
+    text-transform: uppercase;
+  }
+  div.healcode .header {
+    background-color: rgba(0, 0, 255, 0) !important;
+  }
+  /*Название класса*/
+  div.healcode .classname a {
+    color: #917151 !important;
+    font-weight: normal;
+    font-size: 15px;
+  }
+  /*Menu*/
+  div.healcode table.schedule tr th {
+    font-size: 15px !important;
+    font-family: 'Avenir next';
+    font-weight: normal !important;
+  }
+  /*MY ACCOUNT*/
+  div.healcode a.action_icon .action_text.my_account_text {
+    font-size: 15px !important;
+    font-family: 'Avenir next';
+    font-weight: normal !important;
+  }
+  /*Date*/
+  div.healcode .header .date_links .healcode-jump-to-date input {
+    font-size: 11px !important;
+    font-family: 'Avenir next';
+  }
+  div.healcode table.schedule tr th, div.healcode table.schedule ol.schedule_list {
+    background-color: rgba(145, 113, 81, 0.1) !important;
+  }
+  div.healcode table.schedule tr th, div.healcode table.schedule ol.schedule_list li.schedule_header {
+    font-size: 15px;
+    font-family: 'Avenir next';
+  }
+  /*My accaunt*/
+  div.healcode a.action_icon.my_account_version {
+    color: rgb(74, 73, 74) !important;
+  }
+  /*TODAY*/
+  div.healcode .week_links a, div.healcode .week_links a:visited, div.healcode .day_links a, div.healcode .day_links a:visited, div.healcode a.hc-button, div.healcode .healcode-date-links-area a {
+    background-color: rgba(0, 0, 255, 0) !important;
+    color: rgb(74, 73, 74) !important;
+    font-size: 15px !important;
+    font-family: 'Avenir next';
+  }
+  div.healcode .hc-button.signup_now {
+    color: rgb(74, 73, 74)!important;
+    background-color: transparent !important;
+    font-size: 15px;
+  }
+  div.healcode div.hc_footer {
+    background-color: transparent !important;
+    visibility: hidden;
+  }

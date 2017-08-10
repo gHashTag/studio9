@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BurgerMenu from 'react-burger-menu';
 import './App.css';
+import Header from './components/header.js'
 import Home from './components/home.js'
 import We from './components/we.js'
 import ForYour from './components/foryour.js'
@@ -105,12 +106,15 @@ class App extends Component {
     }
 
     return (
-      <div id="outer-container" style={{height: '100%'}}>
+      <div id="outer-container" className="App">
         <MenuWrap wait={20} side={this.state.side}>
          <Menu isOpen={this.state.isOpen} id={this.state.currentMenu} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} left>
             {items}
           </Menu>
         </MenuWrap>
+        <div className="App-header">
+          <Header />
+        </div>
         <Child />
       </div>
     );

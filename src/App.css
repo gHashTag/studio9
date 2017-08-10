@@ -1,4 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #121111;
+  height: 70px;
+  padding: 2px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,800);
+
 *,
 *:after,
 *:before {
@@ -102,10 +117,10 @@ h1 {
 
 .bm-burger-button {
    position: fixed;
-   width: 38px;
+   width: 30px;
    height: 20px;
-   left: 20px;
-   top: 41px;
+   left: 15px;
+   top: 25px;
 }
 
 .right .bm-burger-button {
@@ -129,6 +144,7 @@ h1 {
   color: #BF813E;
 }
 .bm-item-list a {
+  text-align: left;
   padding: 0.8em;
 }
 .bm-item-list a span {
