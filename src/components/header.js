@@ -11,10 +11,10 @@ export default class Header extends Component {
 }
 
 const styles = {
- logo: {
-   textAlign: 'center',
-   marginTop: 11,
-   marginLeft: 25,
-   height: 45 
- } 
+  logo: {
+    textAlign: 'center',
+    marginTop: 11,
+    marginLeft: 25,
+    height: 45 
+  } 
 }

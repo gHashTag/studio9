@@ -1,58 +1,58 @@
-import React, { PureComponent } from 'react';
-import { BackgroundCover } from 'background-cover';
-import playInlineVideo from 'iphone-inline-video';
-import insertRule from 'insert-rule';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react'
+import { BackgroundCover } from 'background-cover'
+import playInlineVideo from 'iphone-inline-video'
+import insertRule from 'insert-rule'
+import PropTypes from 'prop-types'
 
-const iOSNavigator = typeof navigator !== 'undefined' && (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
-const iOSVersion = iOSNavigator ? iOSNavigator[1] : null;
+const iOSNavigator = typeof navigator !== 'undefined' && (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/)
+const iOSVersion = iOSNavigator ? iOSNavigator[1] : null
 
 class BackgroundVideo extends PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       visible: false,
       hasStarted: false
-    };
-    this.startTimeIsSet = false;
+    }
+    this.startTimeIsSet = false
   }
 
   componentDidMount() {
     if (this.props.playsInline && iOSVersion) {
-      let hasAudio = !(iOSVersion && iOSVersion < 10 && this.props.autoPlay && this.props.muted); // allow auto play on iOS < 10 for silent videos
-      let requireInteractionOnTablet = false;
+      let hasAudio = !(iOSVersion && iOSVersion < 10 && this.props.autoPlay && this.props.muted) // allow auto play on iOS < 10 for silent videos
+      let requireInteractionOnTablet = false
 
-      playInlineVideo(this.video, hasAudio, requireInteractionOnTablet);
+      playInlineVideo(this.video, hasAudio, requireInteractionOnTablet)
       insertRule([
           'video::-webkit-media-controls-start-playback-button',
           '.IIV::-webkit-media-controls-play-button'
         ], {
           display: 'none',
         }
-      );
+      )
     }
 
     if (this.video.readyState !== 4) {
-      this.video.addEventListener('loadedmetadata', this._handleVideoReady);
+      this.video.addEventListener('loadedmetadata', this._handleVideoReady)
     } else {
-      this._handleVideoReady();
+      this._handleVideoReady()
     }
 
-    this.video.addEventListener('play', this._handleOnPlay);
-    this.video.addEventListener('pause', this._handleOnPause);
-    this.video.volume = this.props.volume;
+    this.video.addEventListener('play', this._handleOnPlay)
+    this.video.addEventListener('pause', this._handleOnPause)
+    this.video.volume = this.props.volume
   }
 
   componentWillUnmount() {
-    this.video.removeEventListener('loadedmetadata', this._handleVideoReady);
-    this.video.removeEventListener('play', this._handleOnPlay);
-    this.video.removeEventListener('pause', this._handleOnPause);
+    this.video.removeEventListener('loadedmetadata', this._handleVideoReady)
+    this.video.removeEventListener('play', this._handleOnPlay)
+    this.video.removeEventListener('pause', this._handleOnPause)
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.containerWidth !== nextProps.containerWidth ||
       this.props.containerHeight !== nextProps.containerHeight) {
-      this._resize();
+      this._resize()
     }
 
     if (this.props.volume !== nextProps.volume) {
@@ -61,101 +61,101 @@ class BackgroundVideo extends PureComponent {
   }
 
   shouldComponentUpdate(nextState, nextProps) {
-    return this.props.shouldComponentUpdate;
+    return this.props.shouldComponentUpdate
   }
 
   _handleVideoReady = () => {
-    let duration = this.video.duration;
-    this._resize();
-    this.setCurrentTime(this.props.startTime);
-    this.props.autoPlay && this.play();
-    this.props.onReady(duration);
-    !this.poster && this.setState({visible: false});
-  };
+    let duration = this.video.duration
+    this._resize()
+    this.setCurrentTime(this.props.startTime)
+    this.props.autoPlay && this.play()
+    this.props.onReady(duration)
+    !this.poster && this.setState({visible: false})
+  }
 
   _handlePosterReady = () => {
-    this._resize();
-    this.setState({visible: true});
-  };
+    this._resize()
+    this.setState({visible: true})
+  }
 
   _resize = () => {
     if (!this.props.disableBackgroundCover) {
-      BackgroundCover(this.video, this.container, this.props.horizontalAlign, this.props.verticalAlign);
-      this.poster && BackgroundCover(this.poster, this.container, this.props.horizontalAlign, this.props.verticalAlign);
+      BackgroundCover(this.video, this.container, this.props.horizontalAlign, this.props.verticalAlign)
+      this.poster && BackgroundCover(this.poster, this.container, this.props.horizontalAlign, this.props.verticalAlign)
     }
-  };
+  }
 
   _handleOnPlay = () => {
-    if (!this.state.hasStarted) this.setState({hasStarted: true});
-    this.props.onPlay();
-  };
+    if (!this.state.hasStarted) this.setState({hasStarted: true})
+    this.props.onPlay()
+  }
 
   _handleOnPause = () => {
-    this.props.onPause();
-  };
+    this.props.onPause()
+  }
 
   _handleTimeUpdate = () => {
-    iOSVersion && this._handleIOSStartTime();
-    let currentTime = this.video.currentTime;
-    let duration = this.video.duration;
-    let progress = currentTime / duration;
-    this.props.onTimeUpdate(currentTime, progress, duration);
-  };
+    iOSVersion && this._handleIOSStartTime()
+    let currentTime = this.video.currentTime
+    let duration = this.video.duration
+    let progress = currentTime / duration
+    this.props.onTimeUpdate(currentTime, progress, duration)
+  }
 
   _handleVideoEnd = () => {
-    this.props.onEnd();
-  };
+    this.props.onEnd()
+  }
 
   _handleIOSStartTime = () => {
     if (this.video.currentTime < this.props.startTime) {
       if (!this.startTimeIsSet) {
-        this.setCurrentTime(this.props.startTime);
-        this.startTimeIsSet = true;
+        this.setCurrentTime(this.props.startTime)
+        this.startTimeIsSet = true
       }
     }
-  };
+  }
 
   play = () => {
-    this.video.play();
-  };
+    this.video.play()
+  }
 
   pause = () => {
-    this.video.pause();
-  };
+    this.video.pause()
+  }
 
   togglePlay = () => {
-    this.video.paused ? this.play() : this.pause();
-  };
+    this.video.paused ? this.play() : this.pause()
+  }
 
   isPaused = () => {
-    return this.video.paused;
-  };
+    return this.video.paused
+  }
 
   mute = () => {
-    this.video.muted = true;
-    this.props.onMute();
-  };
+    this.video.muted = true
+    this.props.onMute()
+  }
 
   unmute = () => {
-    this.video.muted = false;
-    this.props.onUnmute();
-  };
+    this.video.muted = false
+    this.props.onUnmute()
+  }
 
   toggleMute = () => {
-    this.video.muted ? this.unmute() : this.mute();
-  };
+    this.video.muted ? this.unmute() : this.mute()
+  }
 
   isMuted = () => {
-    return this.video.muted;
-  };
+    return this.video.muted
+  }
 
   setCurrentTime = (val) => {
-    this.video.currentTime = val;
-  };
+    this.video.currentTime = val
+  }
 
   render() {
-    const props = this.props;
-    const state = this.state;
+    const props = this.props
+    const state = this.state
 
     const absolute100 = {
       position: 'absolute',
@@ -163,15 +163,15 @@ class BackgroundVideo extends PureComponent {
       left: 0,
       width: '100%',
       height: '100%'
-    };
+    }
 
-    const className = 'BackgroundVideo';
-    const visibility = state.visible ? 'visible' : 'hidden';
-    const style = Object.assign({...absolute100, visibility}, props.style);
+    const className = 'BackgroundVideo'
+    const visibility = state.visible ? 'visible' : 'hidden'
+    const style = Object.assign({...absolute100, visibility}, props.style)
 
     let extraVideoElementProps = Object.assign(props.extraVideoElementProps, {
       playsInline: props.playsInline
-    });
+    })
 
     const videoProps = {
       ref: v => this.video = v,
@@ -182,7 +182,7 @@ class BackgroundVideo extends PureComponent {
       onTimeUpdate: this._handleTimeUpdate,
       onEnded: this._handleVideoEnd,
       ...extraVideoElementProps
-    };
+    }
 
     return (
       <div
@@ -213,11 +213,11 @@ class BackgroundVideo extends PureComponent {
             src={props.poster}
             ref={r => this.poster = r}
             onLoad={this._handlePosterReady}
-            alt="превью"
+            alt='превью'
           />
         }
       </div>
-    );
+    )
   }
 }
 
@@ -253,7 +253,7 @@ BackgroundVideo.propTypes = {
   onEnd: PropTypes.func,
   onClick: PropTypes.func,
   onKeyPress: PropTypes.func
-};
+}
 
 BackgroundVideo.defaultProps = {
   playsInline: true,
@@ -281,6 +281,6 @@ BackgroundVideo.defaultProps = {
   onEnd: f => f,
   onClick: f => f,
   onKeyPress: f => f
-};
+}
 
-export default BackgroundVideo;
+export default BackgroundVideo

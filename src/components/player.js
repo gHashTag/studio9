@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import TestComponent from  './videobackground.js';
+import React, { Component } from 'react'
+import TestComponent from  './videobackground.js'
 
-document.body.style.position = 'absolute';
-document.body.style.margin = 0;
-document.body.style.width = '100%';
-document.body.style.height = '100%';
-document.body.style.overflow = 'hidden';
+document.body.style.position = 'absolute'
+document.body.style.margin = 0
+document.body.style.width = '100%'
+document.body.style.height = '100%'
+document.body.style.overflow = 'hidden'
 
 export default class Player extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isPlaying: undefined,
       isMuted: undefined,
@@ -25,12 +25,12 @@ export default class Player extends Component {
     this.setState({
       isPlaying: !this.player.isPaused,
       isMuted: this.player.isMuted,
-    });
-    window.addEventListener('resize', this.handleResize);
+    })
+    window.addEventListener('resize', this.handleResize)
   }
 
   componentWillMount() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('resize', this.handleResize)
   }
 
   handleResize = () => {
@@ -38,39 +38,39 @@ export default class Player extends Component {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
     })
-  };
+  }
 
   handleOnPlay = () => {
-    this.setState({isPlaying: true});
-  };
+    this.setState({isPlaying: true})
+  }
 
   handleOnPause = () => {
-    this.setState({isPlaying: false});
-  };
+    this.setState({isPlaying: false})
+  }
 
   handleTimeUpdate = (currentTime, progress, duration) => {
     this.setState({
       progress,
       currentTime,
       duration,
-    });
-  };
+    })
+  }
 
   handleOnMute = () => {
-    this.setState({isMuted: true});
-  };
+    this.setState({isMuted: true})
+  }
 
   handleOnUnmute = () => {
-    this.setState({isMuted: false});
-  };
+    this.setState({isMuted: false})
+  }
 
   togglePlay = () => {
-    this.player.togglePlay();
-  };
+    this.player.togglePlay()
+  }
 
   toggleMute = () => {
-    this.player.toggleMute();
-  };
+    this.player.toggleMute()
+  }
 
   render() {
     return (
