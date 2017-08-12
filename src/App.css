@@ -1,4 +1,35 @@
+.App {
+  text-align: center;
+  position: fixed;
+  overflow: scroll; 
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+.App-header {
+  background-color: #121111;
+  height: 70px;
+  padding: 2px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700,800);
+
 *,
 *:after,
 *:before {
@@ -63,10 +94,6 @@ h1 {
   border-bottom-left-radius: 20px 50px;
   cursor: pointer;
 }
-.demo-buttons a.current-demo {
-  background: #c94e50;
-  color: #fffce1;
-}
 .side-button {
   display: inline-block;
   width: 5em;
@@ -88,9 +115,9 @@ h1 {
   border-bottom-right-radius: 10px;
 }
 .side-button.active {
-  background: #121111;
+  background: #fff;
 }
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 90em) {
   main {
     font-size: 80%;
   }
@@ -103,19 +130,21 @@ h1 {
     padding: 0 2em;
   }
 }
+
 .bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
+   position: fixed;
+   width: 30px;
+   height: 20px;
+   left: 15px;
+   top: 25px;
 }
+
 .right .bm-burger-button {
   left: initial;
   right: 36px;
 }
 .bm-burger-bars {
-  background: #121111;
+  background: #BF813E;
 }
 .bm-morph-shape {
   fill: #121111;
@@ -131,79 +160,12 @@ h1 {
   color: #BF813E;
 }
 .bm-item-list a {
+  text-align: left;
   padding: 0.8em;
 }
 .bm-item-list a span {
   margin-left: 10px;
   font-weight: 100;
-}
-.menu-1 .bm-cross {
-  background: #fff;
-}
-.menu-1 .bm-menu {
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-.menu-2 .bm-cross {
-  background: #999;
-}
-.menu-2 .bm-menu {
-  padding: 3.4em 1em 0;
-}
-.menu-2 a {
-  padding: 1em;
-}
-.menu-2 i {
-  font-size: 1.7em;
-  vertical-align: middle;
-  color: #282a35;
-}
-.menu-3 .bm-cross {
-  background: #888;
-}
-.menu-3 .bm-menu {
-  padding: 2em 1em;
-  font-size: 1.15em;
-}
-.menu-3 i {
-  opacity: 0.5;
-}
-.menu-3 span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.75em;
-}
-.menu-4 .bm-cross {
-  background: #888;
-}
-.menu-4 h2 {
-  margin: 0 auto;
-  padding: 2em 1em;
-  color: rgba(0, 0, 0, 0.4);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
-}
-.menu-4 h2 i {
-  margin-left: 0.2em;
-}
-.menu-4 h2 span {
-  font-size: 1.6em;
-  font-weight: 700;
-}
-.menu-4 a {
-  padding: 1em;
-  text-transform: uppercase;
-  transition: background 0.3s, box-shadow 0.3s;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
-}
-.menu-4 a span {
-  letter-spacing: 1px;
-  font-weight: 400;
-}
-.menu-4 a:hover,
-.menu-4 a:focus {
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0);
-  color: #b8b7ad;
 }
 #slide .bm-cross,
 #stack .bm-cross {

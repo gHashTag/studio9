@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
+import Classes from './classes.js'
 
-export default class TimeTable extends Component {
+class TimeTable extends Component {
   render() {
+    const { container } = styles
     return (
-      <div className='row'>
-        <div className='col-md-12'>Раздел /timetable</div>
+      <div className='App'>
+        <div style={container}>
+          <Classes />
+        </div>
       </div>
     )
   }
 }
+
+const styles = {
+  container: {
+    flex: 1,
+    padding: 15
+  } 
+}
+
+export default TimeTable 

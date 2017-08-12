@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import Player from './player.js'
 
 export default class Home extends Component {
   render() {
     return (
-      <div className='row'>
-        <div className='col-md-12'>Раздел /home</div>
+      <div className='App'>
+        <Player />
       </div>
     )
   }
