@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import logoStudio9 from './logo.png'
 
 export default class Header extends Component {
   render() {
     const { logo } = styles
     return (
-      <img style={logo} src={require('./logo.png')} alt='studio9reborn' />
+      <img style={logo} src={logoStudio9} alt='studio9reborn' />
     )
   }
 }

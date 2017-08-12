@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react'
 import logo from './logo.svg'
+import Feedback from './feedbackform.js'
 
 const AnyReactComponent = ({ text }) => (
   <img src={logo} className='App-logo' alt="logo" />
@@ -17,6 +18,9 @@ export default class Contact extends Component {
         <p className='App-intro'>
            Контакт 
         </p>
+        <div className='App'>
+           <Feedback />
+        </div>
        <GoogleMapReact
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}

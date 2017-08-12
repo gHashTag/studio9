@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import BurgerMenu from 'react-burger-menu'
 import './App.css'
-import Header from './components/header.js'
+import Header from './components/header/header.js'
 import Home from './components/home.js'
 import We from './components/we.js'
 import ForYour from './components/foryour.js'
@@ -9,7 +9,7 @@ import TimeTable from './components/timetable.js'
 import TV from './components/tv.js'
 import Restaurant from './components/restaurant.js'
 import Shop from './components/shop.js'
-import Contact from './components/contact.js'
+import Contact from './components/contact/contact.js'
 
 class MenuWrap extends Component {
   constructor (props) {
