@@ -1,17 +1,9 @@
 import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react'
+import logo from './logo.svg'
 
 const AnyReactComponent = ({ text }) => (
-  <div style={{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#BF813E', 
-    background: '#121111',
-    height: 40, width: 115    
-  }}>
-  <h3 style={{alignSelf: 'center' }}>{text}</h3>
-  </div>
+  <img src={logo} className='App-logo' alt="logo" />
 )
 
 export default class Contact extends Component {
@@ -30,8 +22,8 @@ export default class Contact extends Component {
         defaultZoom={this.props.zoom}
       >
         <AnyReactComponent
-          lat={55.75777}
-          lng={37.5549}
+          lat={55.75785}
+          lng={37.55499}
           text={'Studio9Reborn'}
          /> 
       </GoogleMapReact>
